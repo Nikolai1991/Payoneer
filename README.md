@@ -12,7 +12,7 @@
 
 
 
-## Terraform
+## Terraform:
 
 Building EKS Cluster via Terraform:
 
@@ -27,7 +27,7 @@ Building EKS Cluster via Terraform:
 - `docker tag 018876cb57ef 048610927396.dkr.ecr.eu-west-1.amazonaws.com/devops`
 - `docker push 048610927396.dkr.ecr.eu-west-1.amazonaws.com/devops`
 
-##### MySQL Helm Chart
+##### MySQL Helm Chart:
 
 - `MySQL service name = db-mysql`
 - `MySQL port number  = 3306`
@@ -36,7 +36,7 @@ Building EKS Cluster via Terraform:
 
 - `helm install --name db -f mysql/values.yaml --set mysqlRootPassword=****,mysqlUser=****,mysqlPassword=****,mysqlDatabase=Payoneer stable/mysql`
 
-### Kafka
+## Kafka:
 
 ##### Building Kafka and deploy to the cluster:
 
@@ -74,24 +74,24 @@ To start an interactive message producer session:
 To create a message in the above session, simply type the message and press "enter"
 To end the producer session try: Ctrl+C
 
-### Build jar files with maven:
+## Build jar files with maven:
 
 1. `mvn install ./common`
 2. `mvn install -Dmaven.test.skip=true -f ./producer`
 3. `mvn install -Dmaven.test.skip=true -f ./consumer`
 
-### Containerazation the apps:
+## Containerazation the apps:
 
 1. `docker build -t 048610927396.dkr.ecr.eu-west-1.amazonaws.com/producer ./producer`
 2. `docker build -t 048610927396.dkr.ecr.eu-west-1.amazonaws.com/consumer ./consumer`
 3. `docker push 048610927396.dkr.ecr.eu-west-1.amazonaws.com/producer`
 4. `docker push 048610927396.dkr.ecr.eu-west-1.amazonaws.com/consumer`
 
-### Deploy Producer
+## Deploy Producer:
 - `kubectl apply -f producer/producer.yaml`
 
 
-### Deploy Consumer
+## Deploy Consumer:
 - `kubectl apply -f consumer/consumer.yaml`
 
 
@@ -103,7 +103,7 @@ To end the producer session try: Ctrl+C
 4. `kubectl logs producer-86d4df49bd-4xwmt`
 
 
-### Generate load to trigger scaling
+## Generate load testing to trigger scaling:
 
 #### HPA Load testing:
 
