@@ -87,11 +87,11 @@ To end the producer session try: Ctrl+C
 3. `docker push 048610927396.dkr.ecr.eu-west-1.amazonaws.com/producer`
 4. `docker push 048610927396.dkr.ecr.eu-west-1.amazonaws.com/consumer`
 
-## Deploy Producer
+### Deploy Producer
 - `kubectl apply -f producer/producer.yaml`
 
 
-## Deploy Consumer
+### Deploy Consumer
 - `kubectl apply -f consumer/consumer.yaml`
 
 
@@ -102,9 +102,10 @@ To end the producer session try: Ctrl+C
 3. `kubectl logs consumer-fd89d97c6-4c45c`
 4. `kubectl logs producer-86d4df49bd-4xwmt`
 
-#### HPA Load testing:
 
-# Generate load to trigger scaling
+### Generate load to trigger scaling
+
+#### HPA Load testing:
 
 1. `kubectl run -i --tty load-generator --image=busybox /bin/sh` (or we can use our Kafka-client)
 2. `while true; do curl -XPOST "http://producer:9000/producer/?count=100"; done`
