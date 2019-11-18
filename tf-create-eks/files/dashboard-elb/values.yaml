@@ -1,0 +1,8 @@
+dashboard_elb:
+  name: kubernetes-dashboard-elb
+  environment: dev
+  namespace: kube-system
+  cross_zone: true
+  port: 443
+  app_port: 8443
+  app: kubernetes-dashboard
